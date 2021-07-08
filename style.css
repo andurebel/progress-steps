@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+body {
+  background: #b08e24;
+  background: linear-gradient(90deg, #b08e24 0%, #8f8c23 52%, #cf7627 100%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+body .container {
+  text-align: center;
+}
+body .container .btn {
+  background-color: #3498db;
+  color: #f5ebeb;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: inherit;
+  padding: 10px 30px;
+  font-size: 15px;
+}
+body .container .btn:active {
+  transform: scale(0.9);
+}
+body .container .btn:focus {
+  outline: none;
+}
+body .container .btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+body .container .progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 600px;
+}
+@media (max-width: 400px) {
+  body .container .progress-container {
+    width: 15rem;
+  }
+}
+@media (min-width: 400px) {
+  body .container .progress-container {
+    width: 20rem;
+  }
+}
+@media (min-width: 740px) {
+  body .container .progress-container {
+    width: 35rem;
+  }
+}
+@media (min-width: 1080px) {
+  body .container .progress-container {
+    width: 50rem;
+  }
+}
+body .container .progress-container::before {
+  content: "";
+  background-color: #3b28cc;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 100%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+body .container .progress {
+  background-color: #ca12b1;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+body .container .circle {
+  background-color: #f5ebeb;
+  color: #3498db;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #999;
+  transition: 0.4s ease;
+}
+body .container .active {
+  border-color: #3498db;
+}
+
+/*# sourceMappingURL=style.css.map */

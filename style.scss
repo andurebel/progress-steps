@@ -1,0 +1,114 @@
+//font
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap");
+
+//global style
+* {
+  box-sizing: border-box;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+//variables
+$LineColor: #3b28cc;
+$ProgressBg: #ca12b1;
+$White: rgb(245, 235, 235);
+$CircleBorder: #999;
+$BorderActive: #3498db;
+
+body {
+  background: rgb(176, 142, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(176, 142, 36, 1) 0%,
+    rgba(143, 140, 35, 1) 52%,
+    rgba(207, 118, 39, 1) 100%
+  );
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  .container {
+    text-align: center;
+    .btn {
+      background-color: $BorderActive;
+      color: $White;
+      border: 0;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: inherit;
+      padding: 10px 30px;
+      font-size: 15px;
+      &:active {
+        transform: scale(0.9);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:disabled {
+        background-color: $CircleBorder;
+        cursor: not-allowed;
+      }
+    }
+
+    .progress-container {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 30px;
+      max-width: 100%;
+      width: 600px;
+      @media (max-width: 400px) {
+        width: 15rem;
+      }
+      @media (min-width: 400px) {
+        width: 20rem;
+      }
+      @media (min-width: 740px) {
+        width: 35rem;
+      }
+      @media (min-width: 1080px) {
+        width: 50rem;
+      }
+      &::before {
+        content: "";
+        background-color: $LineColor;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 5px;
+        width: 100%;
+        z-index: -1;
+        transition: 0.4s ease;
+      }
+    }
+    .progress {
+      background-color: $ProgressBg;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 5px;
+      width: 0%;
+      z-index: -1;
+      transition: 0.4s ease;
+    }
+    .circle {
+      background-color: $White;
+      color: $BorderActive;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid $CircleBorder;
+      transition: 0.4s ease;
+    }
+    .active {
+      border-color: $BorderActive;
+    }
+  }
+}
